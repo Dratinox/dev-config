@@ -18,6 +18,12 @@ Plug 'tpope/vim-surround'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Chiel92/vim-autoformat'
 Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+Plug 'kiteco/vim-plugin'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -78,7 +84,8 @@ nmap <leader>gs :Gedit :<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Gpush<CR>
 
-nmap <leader>af :Autoformat<CR>
+nmap <leader>af :CocCommand prettier.formatFile<CR>
+nmap <leader>auf :CocCommand tsserver.executeAutofix<CR>
 let g:formatdef_black_longer = '"black -l 119 -q ".(&textwidth ? "-l".&textwidth : "")." -"'
 let g:formatters_python = ['black_longer']
 
